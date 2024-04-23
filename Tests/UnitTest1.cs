@@ -11,6 +11,7 @@ using WebDriverManager.DriverConfigs.Impl;
 using System.Diagnostics;
 using NuGet.Frameworks;
 using TestProject_C_seleniumframework.Utilities;
+using OpenQA.Selenium.Support.UI;
 
 namespace TestProject_C_seleniumframework.Tests
 {
@@ -32,6 +33,9 @@ namespace TestProject_C_seleniumframework.Tests
             //driver.FindElement(By.CssSelector("input[type='checkbox'")).Click();
             driver.FindElement(By.XPath("//div[@class='form-group']/label/span/input")).Click();
             driver.FindElement(By.XPath("//input[@id='signInBtn']")).Click();
+
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.TextToBePresentInElementValue(By.XPath("//input[@id='signInBtn']"), "Sign In"));
 
             // to collect error message give wrong username
             string er_message = driver.FindElement(By.ClassName("alert-danger")).Text;

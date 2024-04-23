@@ -21,6 +21,7 @@
     <Import Project="$(NuGetPackageRoot)microsoft.net.test.sdk\17.8.0\build\netcoreapp3.1\Microsoft.NET.Test.Sdk.props" Condition="Exists('$(NuGetPackageRoot)microsoft.net.test.sdk\17.8.0\build\netcoreapp3.1\Microsoft.NET.Test.Sdk.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgSelenium_Mozilla_Firefox_Webdriver Condition=" '$(PkgSelenium_Mozilla_Firefox_Webdriver)' == '' ">C:\Users\lijom\.nuget\packages\selenium.mozilla.firefox.webdriver\0.6.0.1</PkgSelenium_Mozilla_Firefox_Webdriver>
     <PkgNUnit_Analyzers Condition=" '$(PkgNUnit_Analyzers)' == '' ">C:\Users\lijom\.nuget\packages\nunit.analyzers\3.9.0</PkgNUnit_Analyzers>
   </PropertyGroup>
 </Project>
