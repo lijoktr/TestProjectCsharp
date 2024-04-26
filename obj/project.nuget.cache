@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "Cq0H5LCUGn1+MvASD+c3U9Gg1nJEvoemwVAFDJMC5skhB9EULs4fOdd4GyDWfPlBI2AEHv2BK9X/M04hGcSaCA==",
+  "dgSpecHash": "IhGtJRdFzGaZTAjjJ/iwQHMmCqgzPNUdZCpSUo9t3PlYJ5tNmmU9YaDw3aqfhcaA71VlrnGwWBJDfodOx+d5+Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\lijom\\source\\repos\\TestProject_C#seleniumframework\\TestProject_C#seleniumframework\\TestProject_C#seleniumframework.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lijom\\.nuget\\packages\\anglesharp\\1.1.0\\anglesharp.1.1.0.nupkg.sha512",
     "C:\\Users\\lijom\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
+    "C:\\Users\\lijom\\.nuget\\packages\\dotnetseleniumextras.pageobjects\\3.11.0\\dotnetseleniumextras.pageobjects.3.11.0.nupkg.sha512",
+    "C:\\Users\\lijom\\.nuget\\packages\\dotnetseleniumextras.pageobjects.core\\4.14.1\\dotnetseleniumextras.pageobjects.core.4.14.1.nupkg.sha512",
     "C:\\Users\\lijom\\.nuget\\packages\\dotnetseleniumextras.waithelpers\\3.11.0\\dotnetseleniumextras.waithelpers.3.11.0.nupkg.sha512",
     "C:\\Users\\lijom\\.nuget\\packages\\microsoft.codecoverage\\17.8.0\\microsoft.codecoverage.17.8.0.nupkg.sha512",
     "C:\\Users\\lijom\\.nuget\\packages\\microsoft.net.test.sdk\\17.8.0\\microsoft.net.test.sdk.17.8.0.nupkg.sha512",

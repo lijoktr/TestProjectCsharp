@@ -113,3 +113,4 @@ C:\Users\lijom\source\repos\TestProject_C#seleniumframework\TestProject_C#seleni
 C:\Users\lijom\source\repos\TestProject_C#seleniumframework\TestProject_C#seleniumframework\obj\Debug\net8.0\TestProject_C#seleniumframework.pdb
 C:\Users\lijom\source\repos\TestProject_C#seleniumframework\TestProject_C#seleniumframework\obj\Debug\net8.0\TestProject_C#seleniumframework.genruntimeconfig.cache
 C:\Users\lijom\source\repos\TestProject_C#seleniumframework\TestProject_C#seleniumframework\obj\Debug\net8.0\ref\TestProject_C#seleniumframework.dll
+C:\Users\lijom\source\repos\TestProject_C#seleniumframework\TestProject_C#seleniumframework\bin\Debug\net8.0\SeleniumExtras.PageObjects.dll

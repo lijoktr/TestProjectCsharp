@@ -12,6 +12,7 @@ using System.Diagnostics;
 using NuGet.Frameworks;
 using TestProject_C_seleniumframework.Utilities;
 using OpenQA.Selenium.Support.UI;
+using TestProject_C_seleniumframework.PageObject;
 
 namespace TestProject_C_seleniumframework.Tests
 {
@@ -26,9 +27,11 @@ namespace TestProject_C_seleniumframework.Tests
             TestContext.Progress.WriteLine(driver.Url);
             TestContext.Progress.WriteLine(driver.Title);
 
+            
+            //driver.FindElement(By.Id("username")).SendKeys("rahulshettyacadem");
+            LoginPage loginpage = new LoginPage(driver);
+            loginpage.getusername().SendKeys("rahulshettyacadem");
 
-            //driver.FindElement(By.Id("username")).SendKeys("rahulshettyacademy");
-            driver.FindElement(By.Id("username")).SendKeys("rahulshettyacadem");
             driver.FindElement(By.Name("password")).SendKeys("learning");
             //driver.FindElement(By.CssSelector("input[type='checkbox'")).Click();
             driver.FindElement(By.XPath("//div[@class='form-group']/label/span/input")).Click();
