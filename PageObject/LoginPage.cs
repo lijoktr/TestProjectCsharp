@@ -21,10 +21,27 @@ namespace TestProject_C_seleniumframework.PageObject
         [FindsBy(How = How.Id, Using = "username")]
         private IWebElement username;
 
-        public IWebElement getusername()
+        
+        [FindsBy(How = How.Name, Using = "password")]
+        private IWebElement password;
+
+        [FindsBy(How = How.XPath, Using = "//div[@class='form-group']/label/span/input")]
+        private IWebElement checkbox1;
+
+        [FindsBy(How = How.XPath, Using = "//input[@id='signInBtn']")]
+        private IWebElement signin;
+
+        public void validlogin(string user, string pass)
         {
-            return username;
+            username.SendKeys(user);
+
+            password.SendKeys(pass);
+
+            checkbox1.Click();
+
+            signin.Click();
         }
 
+       
     }
 }
