@@ -24,61 +24,67 @@ namespace TestProject_C_seleniumframework.Tests
         [Test]
         public void Test1()
         {
-
-            TestContext.Progress.WriteLine(driver.Url);
-            TestContext.Progress.WriteLine(driver.Title);
-
-            
-            //driver.FindElement(By.Id("username")).SendKeys("rahulshettyacadem");
-            LoginPage loginpage = new LoginPage(driver);
-
-            loginpage.validlogin("rahulshettyacademy", "learning");
-          
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
-            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.PartialLinkText("Checkout")));
-
             String[] expproduct = { "iphone X" };
             String[] actual = { "iphone X" };
 
-            IList<IWebElement> listproduct = driver.FindElements(By.TagName("app-card"));
+            TestContext.Progress.WriteLine(driver.Url);
+            TestContext.Progress.WriteLine(driver.Title);
+                        
+            //driver.FindElement(By.Id("username")).SendKeys("rahulshettyacadem");
+            LoginPage loginpage = new LoginPage(driver);
+
+            shoppage Shop = loginpage.validlogin("rahulshettyacademy", "learning");
+            Shop.waitfordisplay();
+
+            IList<IWebElement> listproduct = Shop.getproductlist();
 
             foreach( IWebElement prod in listproduct )
             {
-                //TestContext.Progress.WriteLine(prod.FindElement(By.CssSelector("h4.card-title a")).Text);
-                if(expproduct.Contains(prod.FindElement(By.CssSelector("h4.card-title a")).Text))
+                if (expproduct.Contains(prod.FindElement(Shop.selectproduct()).Text))
                 {
-                   prod.FindElement(By.CssSelector(".card-footer button")).Click();
-                }             
+                    prod.FindElement(Shop.addtokart()).Click();
+                }
             }
-            driver.FindElement(By.PartialLinkText("Checkout")).Click();
 
-            IList<IWebElement> checkout = driver.FindElements(By.CssSelector("h4"));
+            Checkoutpage checkoutpage = Shop.getcheckout();
 
-            for(int i =0; i<checkout.Count; i++)
+            IList<IWebElement> checkoutlist = checkoutpage.getCheckoutlist();
+
+            for(int i =0; i<checkoutlist.Count; i++)
             {
-                actual[i] = checkout[i].Text;
+                actual[i] = checkoutlist[i].Text;
             }
 
             Assert.That(actual,Is.EqualTo(expproduct));
-            //Assert.AreEqual(expproduct, actual);
 
-            driver.FindElement(By.CssSelector(".btn-success")).Click();
+            Confirmpage confirmpage = checkoutpage.getCheckoutclick();
 
+            confirmpage.gettypeind("ind");
 
-            /*          //assertion
-                        // to collect error message give wrong username
-                        wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.TextToBePresentInElementValue(By.XPath("//input[@id='signInBtn']"), "Sign In"));
+            //WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(7));
+            //wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.LinkText("India")));
 
-                        string er_message = driver.FindElement(By.ClassName("alert-danger")).Text;
-                        TestContext.Progress.WriteLine(er_message);
+            confirmpage.waitfortext();
 
-                        IWebElement Link_1 = driver.FindElement(By.LinkText("Free Access to InterviewQues/ResumeAssistance/Material"));
-                        String actual_attr = Link_1.GetAttribute("href");
-                        String expected_attr = "https://rahulshettyacademy.com/documents-request";
-                        Assert.That(actual_attr, Is.EqualTo(expected_attr));
-                        //Assert.AreEqual(expected_attr, actual_attr);
-                        """
-            */
+            //driver.FindElement(By.LinkText("India")).Click();
+
+            //driver.FindElement(By.CssSelector("label[for*='checkbox2'")).Click();
+
+            //driver.FindElement(By.CssSelector("[value='Purchase']")).Click();
+
+            confirmpage.gettextindia();
+
+            confirmpage.getconfirmpagecheckbox();
+
+            confirmpage.getpurchase();
+
+            String conftext = confirmpage.getalert().Text;
+                
+            //driver.FindElement(By.CssSelector(".alert-success")).Text;
+
+            StringAssert.Contains("Success", conftext);
+
+            TestContext.Progress.WriteLine("Test completed");
 
         }
 

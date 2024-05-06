@@ -54,7 +54,7 @@ namespace TestProject_C_seleniumframework.Utilities
 
         public void Close()
         {
-            Thread.Sleep(20000);
+            Thread.Sleep(5000);
             driver.Close();
         }
     }

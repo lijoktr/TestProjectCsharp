@@ -31,7 +31,7 @@ namespace TestProject_C_seleniumframework.PageObject
         [FindsBy(How = How.XPath, Using = "//input[@id='signInBtn']")]
         private IWebElement signin;
 
-        public void validlogin(string user, string pass)
+        public shoppage validlogin(string user, string pass)
         {
             username.SendKeys(user);
 
@@ -40,6 +40,8 @@ namespace TestProject_C_seleniumframework.PageObject
             checkbox1.Click();
 
             signin.Click();
+
+            return new shoppage(driver);
         }
 
        
