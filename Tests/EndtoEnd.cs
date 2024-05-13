@@ -21,8 +21,9 @@ namespace TestProject_C_seleniumframework.Tests
     {
         
 
-        [Test]
-        public void Test1()
+        [Test, TestCaseSource("addtestcasedata")]
+        //[TestCaseSource("addtestcasedata")]
+        public void Test1(string username, string password)
         {
             String[] expproduct = { "iphone X" };
             String[] actual = { "iphone X" };
@@ -30,10 +31,9 @@ namespace TestProject_C_seleniumframework.Tests
             TestContext.Progress.WriteLine(driver.Url);
             TestContext.Progress.WriteLine(driver.Title);
                         
-            //driver.FindElement(By.Id("username")).SendKeys("rahulshettyacadem");
             LoginPage loginpage = new LoginPage(driver);
 
-            shoppage Shop = loginpage.validlogin("rahulshettyacademy", "learning");
+            shoppage Shop = loginpage.validlogin(username, password);
             Shop.waitfordisplay();
 
             IList<IWebElement> listproduct = Shop.getproductlist();
@@ -61,16 +61,7 @@ namespace TestProject_C_seleniumframework.Tests
 
             confirmpage.gettypeind("ind");
 
-            //WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(7));
-            //wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.LinkText("India")));
-
             confirmpage.waitfortext();
-
-            //driver.FindElement(By.LinkText("India")).Click();
-
-            //driver.FindElement(By.CssSelector("label[for*='checkbox2'")).Click();
-
-            //driver.FindElement(By.CssSelector("[value='Purchase']")).Click();
 
             confirmpage.gettextindia();
 
@@ -80,12 +71,17 @@ namespace TestProject_C_seleniumframework.Tests
 
             String conftext = confirmpage.getalert().Text;
                 
-            //driver.FindElement(By.CssSelector(".alert-success")).Text;
-
             StringAssert.Contains("Success", conftext);
 
             TestContext.Progress.WriteLine("Test completed");
 
+        }
+
+        public static IEnumerable<TestCaseData> addtestcasedata()
+        {
+            //yield - multiple returns
+            yield return new TestCaseData("rahulshettyacademy", "learning");
+            yield return new TestCaseData("rahulshettyacadem", "learning");
         }
 
 
