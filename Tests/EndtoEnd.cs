@@ -19,19 +19,21 @@ namespace TestProject_C_seleniumframework.Tests
 {
     public class Tests : Base
     {
-        
 
-        [Test, TestCaseSource("addtestcasedata")]
-        //[TestCaseSource("addtestcasedata")]
-        public void Test1(string username, string password)
+        //[Test]
+        [Test, TestCaseSource("addTestDataConfig")]
+        //[TestCaseSource("addTestDataConfig")]
+
+        [Parallelizable(ParallelScope.All)]
+        public void Test1(string username, string password, String[] expproduct)
         {
-            String[] expproduct = { "iphone X" };
-            String[] actual = { "iphone X" };
+            //String[] expproduct = { "product" };
+            String[] actual = { "product" };
 
-            TestContext.Progress.WriteLine(driver.Url);
-            TestContext.Progress.WriteLine(driver.Title);
+            TestContext.Progress.WriteLine(driver.Value.Url);
+            TestContext.Progress.WriteLine(driver.Value.Title);
                         
-            LoginPage loginpage = new LoginPage(driver);
+            LoginPage loginpage = new LoginPage(driver.Value);
 
             shoppage Shop = loginpage.validlogin(username, password);
             Shop.waitfordisplay();
@@ -77,11 +79,12 @@ namespace TestProject_C_seleniumframework.Tests
 
         }
 
-        public static IEnumerable<TestCaseData> addtestcasedata()
+        public static IEnumerable<TestCaseData> addTestDataConfig()
         {
             //yield - multiple returns
-            yield return new TestCaseData("rahulshettyacademy", "learning");
-            yield return new TestCaseData("rahulshettyacadem", "learning");
+            //yield
+            yield return new TestCaseData(getDataParser().extractData("username"), getDataParser().extractData("password"), getDataParser().extractDataarray("products"));
+            yield return new TestCaseData(getDataParser().extractData("wrong_username"),getDataParser().extractData("wrong_password"), getDataParser().extractDataarray("products"));
         }
 
 

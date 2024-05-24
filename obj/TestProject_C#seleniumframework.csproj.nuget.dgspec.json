@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lijom\\source\\repos\\TestProject_C#seleniumframework\\TestProject_C#seleniumframework\\TestProject_C#seleniumframework.csproj": {}
+    "C:\\Users\\lijom\\source\\repos\\TestProject_C_seleniumframework\\TestProject_C#seleniumframework.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lijom\\source\\repos\\TestProject_C#seleniumframework\\TestProject_C#seleniumframework\\TestProject_C#seleniumframework.csproj": {
+    "C:\\Users\\lijom\\source\\repos\\TestProject_C_seleniumframework\\TestProject_C#seleniumframework.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lijom\\source\\repos\\TestProject_C#seleniumframework\\TestProject_C#seleniumframework\\TestProject_C#seleniumframework.csproj",
+        "projectUniqueName": "C:\\Users\\lijom\\source\\repos\\TestProject_C_seleniumframework\\TestProject_C#seleniumframework.csproj",
         "projectName": "TestProject_C#seleniumframework",
-        "projectPath": "C:\\Users\\lijom\\source\\repos\\TestProject_C#seleniumframework\\TestProject_C#seleniumframework\\TestProject_C#seleniumframework.csproj",
+        "projectPath": "C:\\Users\\lijom\\source\\repos\\TestProject_C_seleniumframework\\TestProject_C#seleniumframework.csproj",
         "packagesPath": "C:\\Users\\lijom\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lijom\\source\\repos\\TestProject_C#seleniumframework\\TestProject_C#seleniumframework\\obj\\",
+        "outputPath": "C:\\Users\\lijom\\source\\repos\\TestProject_C_seleniumframework\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

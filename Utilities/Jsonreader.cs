@@ -10,14 +10,21 @@ namespace TestProject_C_seleniumframework.Utilities
     public class Jsonreader
     {
         public Jsonreader() 
-        { }
+        { 
+        }
 
-        public void extractData()
+        public string extractData(String tokenName)
         {
-            String MyJsonString = File.ReadAllText("testData.json");
+            String MyJsonString = File.ReadAllText("C:/Users/lijom/source/repos/TestProject_C_seleniumframework/Utilities/testData.json");
             var JsonObject = JToken.Parse(MyJsonString);
-            Console.WriteLine(JsonObject.SelectToken("username").Value<string>());
-
+            return JsonObject.SelectToken(tokenName).Value<string>();
+        }
+        public string[] extractDataarray(String tokenName)
+        {
+            String MyJsonString = File.ReadAllText("C:/Users/lijom/source/repos/TestProject_C_seleniumframework/Utilities/testData.json");
+            var JsonObject = JToken.Parse(MyJsonString);
+            List<String> productlist = JsonObject.SelectTokens(tokenName).Values<string>().ToList();
+            return productlist.ToArray();
 
         }
     }

@@ -15,20 +15,21 @@ namespace TestProject_C_seleniumframework.Utilities
 {
     public class Base
     {
-        public IWebDriver driver;
+        //public IWebDriver driver;
+        public ThreadLocal<IWebDriver> driver = new();
         [SetUp]
         public void Setup()
         {
             String browsername = ConfigurationManager.AppSettings["browser"];
             initbrowser(browsername);
-            driver.Manage().Window.Maximize();
-            //driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5); //wait after each line of execution
-            driver.Url = "https://rahulshettyacademy.com/loginpagePractise/";
+            driver.Value.Manage().Window.Maximize();
+            //driver.Value.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5); //wait after each line of execution
+            driver.Value.Url = "https://rahulshettyacademy.com/loginpagePractise/";
         }
 
         public IWebDriver getdriver()
         {
-            return driver;
+            return driver.Value;
         }
 
         public void initbrowser(string browsername)
@@ -37,17 +38,23 @@ namespace TestProject_C_seleniumframework.Utilities
             {
                 case "Chrome":
                     new WebDriverManager.DriverManager().SetUpDriver(new ChromeConfig());
-                    driver = new ChromeDriver();
+                    driver.Value = new ChromeDriver();
                     break;
                 case "Firefox":
                     new WebDriverManager.DriverManager().SetUpDriver(new ChromeConfig());
-                    driver = new FirefoxDriver();
+                    driver.Value = new FirefoxDriver();
                     break;
                 case "Edge":
-                    new WebDriverManager.DriverManager().SetUpDriver(new ChromeConfig());
-                    driver = new EdgeDriver();
+                    new WebDriverManager.DriverManager().SetUpDriver(new EdgeConfig());
+                    driver.Value = new EdgeDriver();
                     break;
             }
+        }
+
+        public static Jsonreader getDataParser()
+        {
+            return new Jsonreader();
+
         }
 
         [TearDown]
@@ -55,7 +62,7 @@ namespace TestProject_C_seleniumframework.Utilities
         public void Close()
         {
             Thread.Sleep(5000);
-            driver.Close();
+            driver.Value.Close();
         }
     }
 }

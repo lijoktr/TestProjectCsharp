@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TestProject_C#seleniumframework")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c7c61f30f1b9517e4555078ee171bc476c122f28")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c4d50a45823a025fa352c2be34ce7ae26855dfcc")]
 [assembly: System.Reflection.AssemblyProductAttribute("TestProject_C#seleniumframework")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TestProject_C#seleniumframework")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
