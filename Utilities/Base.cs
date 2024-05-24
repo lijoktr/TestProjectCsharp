@@ -15,12 +15,17 @@ namespace TestProject_C_seleniumframework.Utilities
 {
     public class Base
     {
+        String browsername;
         //public IWebDriver driver;
         public ThreadLocal<IWebDriver> driver = new();
         [SetUp]
         public void Setup()
         {
-            String browsername = ConfigurationManager.AppSettings["browser"];
+            browsername = TestContext.Parameters["browsername"];
+            if(browsername == null)
+            {
+                browsername = ConfigurationManager.AppSettings["browser"];
+            }
             initbrowser(browsername);
             driver.Value.Manage().Window.Maximize();
             //driver.Value.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5); //wait after each line of execution

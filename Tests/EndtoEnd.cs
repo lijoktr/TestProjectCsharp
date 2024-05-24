@@ -17,9 +17,10 @@ using NUnit.Framework.Constraints;
 
 namespace TestProject_C_seleniumframework.Tests
 {
+    [Parallelizable(ParallelScope.Self)]
+    //[Parallelizable(ParallelScope.Children)]
     public class Tests : Base
     {
-
         //[Test]
         [Test, TestCaseSource("addTestDataConfig")]
         //[TestCaseSource("addTestDataConfig")]
@@ -73,6 +74,63 @@ namespace TestProject_C_seleniumframework.Tests
 
             String conftext = confirmpage.getalert().Text;
                 
+            StringAssert.Contains("Success", conftext);
+
+            TestContext.Progress.WriteLine("Test completed");
+
+        }
+
+        [Test,Category("Smoke"),TestCaseSource("addTestDataConfig")]
+
+        [Parallelizable(ParallelScope.All)]
+        public void Test2(string username, string password, String[] expproduct)
+        {
+            //String[] expproduct = { "product" };
+            String[] actual = { "product" };
+
+            TestContext.Progress.WriteLine(driver.Value.Url);
+            TestContext.Progress.WriteLine(driver.Value.Title);
+
+            LoginPage loginpage = new LoginPage(driver.Value);
+
+            shoppage Shop = loginpage.validlogin(username, password);
+            Shop.waitfordisplay();
+
+            IList<IWebElement> listproduct = Shop.getproductlist();
+
+            foreach (IWebElement prod in listproduct)
+            {
+                if (expproduct.Contains(prod.FindElement(Shop.selectproduct()).Text))
+                {
+                    prod.FindElement(Shop.addtokart()).Click();
+                }
+            }
+
+            Checkoutpage checkoutpage = Shop.getcheckout();
+
+            IList<IWebElement> checkoutlist = checkoutpage.getCheckoutlist();
+
+            for (int i = 0; i < checkoutlist.Count; i++)
+            {
+                actual[i] = checkoutlist[i].Text;
+            }
+
+            Assert.That(actual, Is.EqualTo(expproduct));
+
+            Confirmpage confirmpage = checkoutpage.getCheckoutclick();
+
+            confirmpage.gettypeind("ind");
+
+            confirmpage.waitfortext();
+
+            confirmpage.gettextindia();
+
+            confirmpage.getconfirmpagecheckbox();
+
+            confirmpage.getpurchase();
+
+            String conftext = confirmpage.getalert().Text;
+
             StringAssert.Contains("Success", conftext);
 
             TestContext.Progress.WriteLine("Test completed");
