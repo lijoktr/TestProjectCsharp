@@ -1,25 +1,32 @@
 ﻿using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WebDriverManager.DriverConfigs.Impl;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Edge;
-using AngleSharp;
 using System.Configuration;
+using AventStack.ExtentReports;
+using AventStack.ExtentReports.Reporter;
 
 namespace TestProject_C_seleniumframework.Utilities
 {
     public class Base
     {
+        ExtentReports extent;
         String browsername;
         //public IWebDriver driver;
+
+        [OneTimeSetUp]
+        public void setup()
+        {
+            String workingdirectory = Environment.CurrentDirectory;
+            String projectdirectory = Directory.GetParent(workingdirectory).Parent.FullName;
+            String reportpath = projectdirectory + "//index.html";
+            var htmlreporter = new ExtentHtmlReporter(reportpath);
+
+        }
         public ThreadLocal<IWebDriver> driver = new();
         [SetUp]
-        public void Setup()
+        public void Startbrowser()
         {
             browsername = TestContext.Parameters["browsername"];
             if(browsername == null)
