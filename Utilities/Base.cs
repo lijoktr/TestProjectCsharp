@@ -13,21 +13,28 @@ namespace TestProject_C_seleniumframework.Utilities
     {
         ExtentReports extent;
         String browsername;
+        ExtentTest test;
         //public IWebDriver driver;
 
         [OneTimeSetUp]
         public void setup()
         {
-            String workingdirectory = Environment.CurrentDirectory;
-            String projectdirectory = Directory.GetParent(workingdirectory).Parent.FullName;
-            String reportpath = projectdirectory + "//index.html";
-            var htmlreporter = new ExtentHtmlReporter(reportpath);
+            string workingDirectory = Environment.CurrentDirectory;
+            string projectDirectory = Directory.GetParent(workingDirectory).Parent.FullName;
+            String reportpath = projectDirectory + "//index.html";
+            var htmlreporter = new ExtentSparkReporter(reportpath);
+            extent?.AttachReporter(htmlreporter);
+            extent?.AddSystemInfo("host name", "localhost");
+            extent?.AddSystemInfo("environment", "QA");
+            extent?.AddSystemInfo("user", "lijo");
 
         }
+
         public ThreadLocal<IWebDriver> driver = new();
         [SetUp]
         public void Startbrowser()
         {
+            test = extent?.CreateTest(TestContext.CurrentContext.Test.Name);
             browsername = TestContext.Parameters["browsername"];
             if(browsername == null)
             {
@@ -73,8 +80,26 @@ namespace TestProject_C_seleniumframework.Utilities
 
         public void Close()
         {
+            var status  = TestContext.CurrentContext.Result.Outcome.Status;
+            DateTime time = DateTime.Now;
+            String fileName = "Screenshot_" + time.ToString("h_mm_ss") + ".png";
+            if (status == NUnit.Framework.Interfaces.TestStatus.Failed)
+            {
+                test.Fail("test failed", capScreenshot(driver.Value));
+            }
+            else if(status == NUnit.Framework.Interfaces.TestStatus.Passed)
+            {
+                test.Pass("test passed");
+            }
             Thread.Sleep(5000);
             driver.Value.Close();
+
+        }
+        public MediaEntityModelProvider capScreenshot(IWebDriver driver, String screenShotName)
+        {
+            ITakesScreenshot ts = (ITakesScreenshot)driver;
+            var screenshot = ts.GetScreenshot().AsBase64EncodedString;
+            return MediaEntityBuilder.CreateScreenCaptureFromBase64String(screenshot, screenShotName).Build();
         }
     }
 }

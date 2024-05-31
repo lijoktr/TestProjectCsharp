@@ -60,18 +60,22 @@
           "lib/netstandard2.0/SeleniumExtras.WaitHelpers.dll": {}
         }
       },
-      "ExtentReports/5.0.2": {
+      "ExtentReports/5.0.0-alpha6": {
         "type": "package",
         "dependencies": {
-          "Newtonsoft.Json": "13.0.3",
+          "Newtonsoft.Json": "12.0.3",
           "RazorEngine.NetCore.nixFix": "1.0.1",
-          "System.Reactive": "6.0.0"
+          "System.Reactive": "5.0.0"
         },
         "compile": {
-          "lib/netstandard2.0/ExtentReports.dll": {}
+          "lib/netstandard2.0/ExtentReports.dll": {
+            "related": ".pdb"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/ExtentReports.dll": {}
+          "lib/netstandard2.0/ExtentReports.dll": {
+            "related": ".pdb"
+          }
         }
       },
       "HTMLReports/1.15.0": {
@@ -822,20 +826,20 @@
           "lib/netcoreapp2.1/_._": {}
         }
       },
-      "System.Reactive/6.0.0": {
+      "System.Reactive/5.0.0": {
         "type": "package",
         "compile": {
-          "lib/net6.0/System.Reactive.dll": {
+          "lib/net5.0/System.Reactive.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net6.0/System.Reactive.dll": {
+          "lib/net5.0/System.Reactive.dll": {
             "related": ".xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0/_._": {}
+          "buildTransitive/net5.0/_._": {}
         }
       },
       "System.Reflection.Emit/4.7.0": {
@@ -1147,16 +1151,17 @@
         "lib/netstandard2.0/SeleniumExtras.WaitHelpers.dll"
       ]
     },
-    "ExtentReports/5.0.2": {
-      "sha512": "C/MwhIFUw80XWdmIhz1/xf9oeH3yVngODN4P+dYarVq1O+vYfOkRgo3aHxc+GZpOpEnr/3kzBPwfxxk1xw0srw==",
+    "ExtentReports/5.0.0-alpha6": {
+      "sha512": "Roc76J8b/GcQfzvwfQe6Zumw6CdCjp+JoW60gwskm+6fsPryAlYkOqGb9ozrG20znU4/Nr/mvv8fMiW0lOojgA==",
       "type": "package",
-      "path": "extentreports/5.0.2",
+      "path": "extentreports/5.0.0-alpha6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "extentreports.5.0.2.nupkg.sha512",
+        "extentreports.5.0.0-alpha6.nupkg.sha512",
         "extentreports.nuspec",
-        "lib/netstandard2.0/ExtentReports.dll"
+        "lib/netstandard2.0/ExtentReports.dll",
+        "lib/netstandard2.0/ExtentReports.pdb"
       ]
     },
     "HTMLReports/1.15.0": {
@@ -2348,31 +2353,32 @@
         "version.txt"
       ]
     },
-    "System.Reactive/6.0.0": {
-      "sha512": "31kfaW4ZupZzPsI5PVe77VhnvFF55qgma7KZr/E0iFTs6fmdhhG8j0mgEx620iLTey1EynOkEfnyTjtNEpJzGw==",
+    "System.Reactive/5.0.0": {
+      "sha512": "erBZjkQHWL9jpasCE/0qKAryzVBJFxGHVBAvgRN1bzM0q2s1S4oYREEEL0Vb+1kA/6BKb5FjUZMp5VXmy+gzkQ==",
       "type": "package",
-      "path": "system.reactive/6.0.0",
+      "path": "system.reactive/5.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "build/net6.0-windows10.0.19041/_._",
-        "build/net6.0/_._",
-        "buildTransitive/net6.0-windows10.0.19041/_._",
-        "buildTransitive/net6.0/_._",
-        "icon.png",
+        "build/net5.0/_._",
+        "build/netcoreapp3.1/System.Reactive.dll",
+        "build/netcoreapp3.1/System.Reactive.targets",
+        "build/netcoreapp3.1/System.Reactive.xml",
+        "buildTransitive/net5.0/_._",
+        "buildTransitive/netcoreapp3.1/System.Reactive.targets",
         "lib/net472/System.Reactive.dll",
         "lib/net472/System.Reactive.xml",
-        "lib/net6.0-windows10.0.19041/System.Reactive.dll",
-        "lib/net6.0-windows10.0.19041/System.Reactive.xml",
-        "lib/net6.0/System.Reactive.dll",
-        "lib/net6.0/System.Reactive.xml",
+        "lib/net5.0-windows10.0.19041/System.Reactive.dll",
+        "lib/net5.0-windows10.0.19041/System.Reactive.xml",
+        "lib/net5.0/System.Reactive.dll",
+        "lib/net5.0/System.Reactive.xml",
+        "lib/netcoreapp3.1/_._",
         "lib/netstandard2.0/System.Reactive.dll",
         "lib/netstandard2.0/System.Reactive.xml",
-        "lib/uap10.0.18362/System.Reactive.dll",
-        "lib/uap10.0.18362/System.Reactive.pri",
-        "lib/uap10.0.18362/System.Reactive.xml",
-        "readme.md",
-        "system.reactive.6.0.0.nupkg.sha512",
+        "lib/uap10.0.16299/System.Reactive.dll",
+        "lib/uap10.0.16299/System.Reactive.pri",
+        "lib/uap10.0.16299/System.Reactive.xml",
+        "system.reactive.5.0.0.nupkg.sha512",
         "system.reactive.nuspec"
       ]
     },
@@ -2778,7 +2784,7 @@
       "DotNetSeleniumExtras.PageObjects >= 3.11.0",
       "DotNetSeleniumExtras.PageObjects.Core >= 4.14.1",
       "DotNetSeleniumExtras.WaitHelpers >= 3.11.0",
-      "ExtentReports >= 5.0.2",
+      "ExtentReports >= 5.0.0-alpha6",
       "HTMLReports >= 1.15.0",
       "Microsoft.NET.Test.Sdk >= 17.8.0",
       "NUnit >= 3.14.0",
@@ -2858,7 +2864,7 @@
           },
           "ExtentReports": {
             "target": "Package",
-            "version": "[5.0.2, )"
+            "version": "[5.0.0-alpha6, )"
           },
           "HTMLReports": {
             "target": "Package",
