@@ -26,7 +26,7 @@ namespace TestProject_C_seleniumframework.Tests
         //[TestCaseSource("addTestDataConfig")]
 
         [Parallelizable(ParallelScope.All)]
-        public void Test1(string username, string password, String[] expproduct)
+       public void Test1(string username, string password, String[] expproduct)
         {
             //String[] expproduct = { "product" };
             String[] actual = { "product" };

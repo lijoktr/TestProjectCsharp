@@ -7,22 +7,26 @@ using System.Configuration;
 using AventStack.ExtentReports;
 using AventStack.ExtentReports.Reporter;
 
+
+
 namespace TestProject_C_seleniumframework.Utilities
 {
     public class Base
     {
-        ExtentReports extent;
+        public ExtentReports extent;
+        public ExtentTest test;
         String browsername;
-        ExtentTest test;
+       
         //public IWebDriver driver;
 
         [OneTimeSetUp]
         public void setup()
         {
             string workingDirectory = Environment.CurrentDirectory;
-            string projectDirectory = Directory.GetParent(workingDirectory).Parent.FullName;
+            string projectDirectory = Directory.GetParent(workingDirectory).FullName;
             String reportpath = projectDirectory + "//index.html";
-            var htmlreporter = new ExtentSparkReporter(reportpath);
+            var htmlreporter = new ExtentHtmlReporter(reportpath);
+            extent = new ExtentReports();
             extent?.AttachReporter(htmlreporter);
             extent?.AddSystemInfo("host name", "localhost");
             extent?.AddSystemInfo("environment", "QA");
@@ -34,7 +38,7 @@ namespace TestProject_C_seleniumframework.Utilities
         [SetUp]
         public void Startbrowser()
         {
-            test = extent?.CreateTest(TestContext.CurrentContext.Test.Name);
+            test = extent.CreateTest(TestContext.CurrentContext.Test.Name);
             browsername = TestContext.Parameters["browsername"];
             if(browsername == null)
             {
@@ -81,17 +85,21 @@ namespace TestProject_C_seleniumframework.Utilities
         public void Close()
         {
             var status  = TestContext.CurrentContext.Result.Outcome.Status;
+            var stacktrace = TestContext.CurrentContext.Result.StackTrace;
+
             DateTime time = DateTime.Now;
             String fileName = "Screenshot_" + time.ToString("h_mm_ss") + ".png";
             if (status == NUnit.Framework.Interfaces.TestStatus.Failed)
             {
-                test.Fail("test failed", capScreenshot(driver.Value));
+                test.Fail("test failed", capScreenshot(driver.Value, fileName));
+                test.Log(Status.Fail, "test failed with logtrace"+stacktrace+"\n");
             }
             else if(status == NUnit.Framework.Interfaces.TestStatus.Passed)
             {
                 test.Pass("test passed");
             }
-            Thread.Sleep(5000);
+            extent.Flush();
+            //Thread.Sleep(5000);
             driver.Value.Close();
 
         }

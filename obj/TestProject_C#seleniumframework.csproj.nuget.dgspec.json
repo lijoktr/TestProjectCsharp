@@ -63,7 +63,11 @@
             },
             "ExtentReports": {
               "target": "Package",
-              "version": "[5.0.0-alpha6, )"
+              "version": "[5.0.2, )"
+            },
+            "ExtentReports.BugFix": {
+              "target": "Package",
+              "version": "[4.2.3, )"
             },
             "HTMLReports": {
               "target": "Package",

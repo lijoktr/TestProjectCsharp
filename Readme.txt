@@ -12,3 +12,14 @@
 5. Change global variable like browser name and run: dotnet test .\TestProject_C#seleniumframework.csproj --filter TestCategory=Smoke -- TestRunParameters.Parameter\(name=\"browserName\",value=\"Edge\"\)
 
 6. change browser running in command line: dotnet test .\TestProject_C#seleniumframework.csproj --filter TestCategory=Smoke --% -- TestRunParameters.Parameter\(name=\"<browsername>\", value=\"<Edge>\"\)
+
+7. Nuget packages reuired: selenium webdriver, selenium support, selenium extras, webdriver manager, system.configuration.configuration manager.
+
+8. Folders: Test for test files, utilites for base class, app config file for global configuration, test data
+
+9. Add the below lines in project file : 
+
+	<Target Name="CopyCustomContent" AfterTargets="AfterBuild">
+		<Copy SourceFiles="App.config" DestinationFiles="$(Outdir)\testhost.dll.config" />
+	</Target>
+

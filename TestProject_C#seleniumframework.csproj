@@ -15,7 +15,8 @@
     <PackageReference Include="DotNetSeleniumExtras.PageObjects" Version="3.11.0" />
     <PackageReference Include="DotNetSeleniumExtras.PageObjects.Core" Version="4.14.1" />
     <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
-    <PackageReference Include="ExtentReports" Version="5.0.0-alpha6" />
+    <PackageReference Include="ExtentReports" Version="5.0.2" />
+    <PackageReference Include="ExtentReports.BugFix" Version="4.2.3" />
     <PackageReference Include="HTMLReports" Version="1.15.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
     <PackageReference Include="NUnit" Version="3.14.0" />
