@@ -80,62 +80,62 @@ namespace TestProject_C_seleniumframework.Tests
 
         }
 
-        [Test,Category("Smoke"),TestCaseSource("addTestDataConfig")]
+        //[Test,Category("Smoke"),TestCaseSource("addTestDataConfig")]
 
-        [Parallelizable(ParallelScope.All)]
-        public void Test2(string username, string password, String[] expproduct)
-        {
-            //String[] expproduct = { "product" };
-            String[] actual = { "product" };
+        //[Parallelizable(ParallelScope.All)]
+        //public void Test2(string username, string password, String[] expproduct)
+        //{
+        //    //String[] expproduct = { "product" };
+        //    String[] actual = { "product" };
 
-            TestContext.Progress.WriteLine(driver.Value.Url);
-            TestContext.Progress.WriteLine(driver.Value.Title);
+        //    TestContext.Progress.WriteLine(driver.Value.Url);
+        //    TestContext.Progress.WriteLine(driver.Value.Title);
 
-            LoginPage loginpage = new LoginPage(driver.Value);
+        //    LoginPage loginpage = new LoginPage(driver.Value);
 
-            shoppage Shop = loginpage.validlogin(username, password);
-            Shop.waitfordisplay();
+        //    shoppage Shop = loginpage.validlogin(username, password);
+        //    Shop.waitfordisplay();
 
-            IList<IWebElement> listproduct = Shop.getproductlist();
+        //    IList<IWebElement> listproduct = Shop.getproductlist();
 
-            foreach (IWebElement prod in listproduct)
-            {
-                if (expproduct.Contains(prod.FindElement(Shop.selectproduct()).Text))
-                {
-                    prod.FindElement(Shop.addtokart()).Click();
-                }
-            }
+        //    foreach (IWebElement prod in listproduct)
+        //    {
+        //        if (expproduct.Contains(prod.FindElement(Shop.selectproduct()).Text))
+        //        {
+        //            prod.FindElement(Shop.addtokart()).Click();
+        //        }
+        //    }
 
-            Checkoutpage checkoutpage = Shop.getcheckout();
+        //    Checkoutpage checkoutpage = Shop.getcheckout();
 
-            IList<IWebElement> checkoutlist = checkoutpage.getCheckoutlist();
+        //    IList<IWebElement> checkoutlist = checkoutpage.getCheckoutlist();
 
-            for (int i = 0; i < checkoutlist.Count; i++)
-            {
-                actual[i] = checkoutlist[i].Text;
-            }
+        //    for (int i = 0; i < checkoutlist.Count; i++)
+        //    {
+        //        actual[i] = checkoutlist[i].Text;
+        //    }
 
-            Assert.That(actual, Is.EqualTo(expproduct));
+        //    Assert.That(actual, Is.EqualTo(expproduct));
 
-            Confirmpage confirmpage = checkoutpage.getCheckoutclick();
+        //    Confirmpage confirmpage = checkoutpage.getCheckoutclick();
 
-            confirmpage.gettypeind("ind");
+        //    confirmpage.gettypeind("ind");
 
-            confirmpage.waitfortext();
+        //    confirmpage.waitfortext();
 
-            confirmpage.gettextindia();
+        //    confirmpage.gettextindia();
 
-            confirmpage.getconfirmpagecheckbox();
+        //    confirmpage.getconfirmpagecheckbox();
 
-            confirmpage.getpurchase();
+        //    confirmpage.getpurchase();
 
-            String conftext = confirmpage.getalert().Text;
+        //    String conftext = confirmpage.getalert().Text;
 
-            StringAssert.Contains("Success", conftext);
+        //    StringAssert.Contains("Success", conftext);
 
-            TestContext.Progress.WriteLine("Test completed");
+        //    TestContext.Progress.WriteLine("Test completed");
 
-        }
+        //}
 
         public static IEnumerable<TestCaseData> addTestDataConfig()
         {

@@ -13,7 +13,7 @@
 
 6. change browser running in command line: dotnet test .\TestProject_C#seleniumframework.csproj --filter TestCategory=Smoke --% -- TestRunParameters.Parameter\(name=\"<browsername>\", value=\"<Edge>\"\)
 
-7. Nuget packages reuired: selenium webdriver, selenium support, selenium extras, webdriver manager, system.configuration.configuration manager.
+7. Nuget packages reuired: selenium webdriver, selenium support, selenium extras, webdriver manager, system.configuration.configuration manager, pageobject,
 
 8. Folders: Test for test files, utilites for base class, app config file for global configuration, test data
 
