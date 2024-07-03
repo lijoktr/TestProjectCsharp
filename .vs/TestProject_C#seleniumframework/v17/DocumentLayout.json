@@ -3,24 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\lijom\\source\\repos\\TestProject_C_seleniumframework\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6D8B8D33-2C49-4C87-ABFF-5722FECC4A40}|TestProject_C#seleniumframework.csproj|c:\\users\\lijom\\source\\repos\\testproject_c_seleniumframework\\readme.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{6D8B8D33-2C49-4C87-ABFF-5722FECC4A40}|TestProject_C#seleniumframework.csproj|solutionrelative:readme.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D8B8D33-2C49-4C87-ABFF-5722FECC4A40}|TestProject_C#seleniumframework.csproj|c:\\users\\lijom\\source\\repos\\testproject_c_seleniumframework\\pageobject\\loginpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D8B8D33-2C49-4C87-ABFF-5722FECC4A40}|TestProject_C#seleniumframework.csproj|solutionrelative:pageobject\\loginpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D8B8D33-2C49-4C87-ABFF-5722FECC4A40}|TestProject_C#seleniumframework.csproj|c:\\users\\lijom\\source\\repos\\testproject_c_seleniumframework\\pageobject\\shoppage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D8B8D33-2C49-4C87-ABFF-5722FECC4A40}|TestProject_C#seleniumframework.csproj|solutionrelative:pageobject\\shoppage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6D8B8D33-2C49-4C87-ABFF-5722FECC4A40}|TestProject_C#seleniumframework.csproj|c:\\users\\lijom\\source\\repos\\testproject_c_seleniumframework\\tests\\endtoend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6D8B8D33-2C49-4C87-ABFF-5722FECC4A40}|TestProject_C#seleniumframework.csproj|solutionrelative:tests\\endtoend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6D8B8D33-2C49-4C87-ABFF-5722FECC4A40}|TestProject_C#seleniumframework.csproj|c:\\users\\lijom\\source\\repos\\testproject_c_seleniumframework\\pageobject\\checkoutpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6D8B8D33-2C49-4C87-ABFF-5722FECC4A40}|TestProject_C#seleniumframework.csproj|solutionrelative:pageobject\\checkoutpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D8B8D33-2C49-4C87-ABFF-5722FECC4A40}|TestProject_C#seleniumframework.csproj|c:\\users\\lijom\\source\\repos\\testproject_c_seleniumframework\\pageobject\\shoppage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D8B8D33-2C49-4C87-ABFF-5722FECC4A40}|TestProject_C#seleniumframework.csproj|solutionrelative:pageobject\\shoppage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D8B8D33-2C49-4C87-ABFF-5722FECC4A40}|TestProject_C#seleniumframework.csproj|c:\\users\\lijom\\source\\repos\\testproject_c_seleniumframework\\utilities\\testdata.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6D8B8D33-2C49-4C87-ABFF-5722FECC4A40}|TestProject_C#seleniumframework.csproj|solutionrelative:utilities\\testdata.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,28 +38,15 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:5:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:7:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Readme.txt",
-              "DocumentMoniker": "C:\\Users\\lijom\\source\\repos\\TestProject_C_seleniumframework\\Readme.txt",
-              "RelativeDocumentMoniker": "Readme.txt",
-              "ToolTip": "C:\\Users\\lijom\\source\\repos\\TestProject_C_seleniumframework\\Readme.txt",
-              "RelativeToolTip": "Readme.txt",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAACcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-06-11T11:35:22.3Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Bookmark",
@@ -76,14 +59,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "LoginPage.cs",
-              "DocumentMoniker": "C:\\Users\\lijom\\source\\repos\\TestProject_C_seleniumframework\\PageObject\\LoginPage.cs",
-              "RelativeDocumentMoniker": "PageObject\\LoginPage.cs",
-              "ToolTip": "C:\\Users\\lijom\\source\\repos\\TestProject_C_seleniumframework\\PageObject\\LoginPage.cs",
-              "RelativeToolTip": "PageObject\\LoginPage.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAmwAAAAAAAAAAA",
+              "Title": "Checkoutpage.cs",
+              "DocumentMoniker": "C:\\Users\\lijom\\source\\repos\\TestProject_C_seleniumframework\\PageObject\\Checkoutpage.cs",
+              "RelativeDocumentMoniker": "PageObject\\Checkoutpage.cs",
+              "ToolTip": "C:\\Users\\lijom\\source\\repos\\TestProject_C_seleniumframework\\PageObject\\Checkoutpage.cs",
+              "RelativeToolTip": "PageObject\\Checkoutpage.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAwBoAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-11T10:49:30.094Z",
+              "WhenOpened": "2024-07-02T10:33:57.39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EndtoEnd.cs",
+              "DocumentMoniker": "C:\\Users\\lijom\\source\\repos\\TestProject_C_seleniumframework\\Tests\\EndtoEnd.cs",
+              "RelativeDocumentMoniker": "Tests\\EndtoEnd.cs",
+              "ToolTip": "C:\\Users\\lijom\\source\\repos\\TestProject_C_seleniumframework\\Tests\\EndtoEnd.cs",
+              "RelativeToolTip": "Tests\\EndtoEnd.cs",
+              "ViewState": "AQIAAFUAAAAAAAAAAAAswF8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-02T09:27:00.267Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "testData.json",
+              "DocumentMoniker": "C:\\Users\\lijom\\source\\repos\\TestProject_C_seleniumframework\\Utilities\\testData.json",
+              "RelativeDocumentMoniker": "Utilities\\testData.json",
+              "ToolTip": "C:\\Users\\lijom\\source\\repos\\TestProject_C_seleniumframework\\Utilities\\testData.json",
+              "RelativeToolTip": "Utilities\\testData.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-02T10:10:50.976Z",
               "EditorCaption": ""
             },
             {
@@ -94,39 +103,9 @@
               "RelativeDocumentMoniker": "PageObject\\shoppage.cs",
               "ToolTip": "C:\\Users\\lijom\\source\\repos\\TestProject_C_seleniumframework\\PageObject\\shoppage.cs",
               "RelativeToolTip": "PageObject\\shoppage.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAQwCEAAAAMAAAA",
+              "ViewState": "AQIAACEAAAAAAAAAAAAYwDYAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-11T10:45:10.806Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "EndtoEnd.cs",
-              "DocumentMoniker": "C:\\Users\\lijom\\source\\repos\\TestProject_C_seleniumframework\\Tests\\EndtoEnd.cs",
-              "RelativeDocumentMoniker": "Tests\\EndtoEnd.cs",
-              "ToolTip": "C:\\Users\\lijom\\source\\repos\\TestProject_C_seleniumframework\\Tests\\EndtoEnd.cs",
-              "RelativeToolTip": "Tests\\EndtoEnd.cs",
-              "ViewState": "AQIAADIAAAAAAAAAAAAWwDoAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T14:34:30.788Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Checkoutpage.cs",
-              "DocumentMoniker": "C:\\Users\\lijom\\source\\repos\\TestProject_C_seleniumframework\\PageObject\\Checkoutpage.cs",
-              "RelativeDocumentMoniker": "PageObject\\Checkoutpage.cs",
-              "ToolTip": "C:\\Users\\lijom\\source\\repos\\TestProject_C_seleniumframework\\PageObject\\Checkoutpage.cs",
-              "RelativeToolTip": "PageObject\\Checkoutpage.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAAwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-11T10:43:02.427Z",
+              "WhenOpened": "2024-07-02T09:27:47.871Z",
               "EditorCaption": ""
             }
           ]

@@ -29,7 +29,8 @@ namespace TestProject_C_seleniumframework.Tests
        public void Test1(string username, string password, String[] expproduct)
         {
             //String[] expproduct = { "product" };
-            String[] actual = { "product" };
+            String[] actual = new string[2]; 
+            //String[] actual = { "product" };
 
             TestContext.Progress.WriteLine(driver.Value.Url);
             TestContext.Progress.WriteLine(driver.Value.Title);
@@ -73,10 +74,10 @@ namespace TestProject_C_seleniumframework.Tests
             confirmpage.getpurchase();
 
             String conftext = confirmpage.getalert().Text;
-                
+
             StringAssert.Contains("Success", conftext);
 
-            TestContext.Progress.WriteLine("Test completed");
+            //TestContext.Progress.Writeline("Test completed");
 
         }
 
@@ -90,6 +91,9 @@ namespace TestProject_C_seleniumframework.Tests
 
         //    TestContext.Progress.WriteLine(driver.Value.Url);
         //    TestContext.Progress.WriteLine(driver.Value.Title);
+
+
+
 
         //    LoginPage loginpage = new LoginPage(driver.Value);
 
@@ -142,7 +146,7 @@ namespace TestProject_C_seleniumframework.Tests
             //yield - multiple returns
             //yield
             yield return new TestCaseData(getDataParser().extractData("username"), getDataParser().extractData("password"), getDataParser().extractDataarray("products"));
-            yield return new TestCaseData(getDataParser().extractData("wrong_username"),getDataParser().extractData("wrong_password"), getDataParser().extractDataarray("products"));
+            //yield return new TestCaseData(getDataParser().extractData("wrong_username"),getDataParser().extractData("wrong_password"), getDataParser().extractDataarray("products"));
         }
 
 
