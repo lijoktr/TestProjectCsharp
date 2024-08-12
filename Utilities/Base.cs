@@ -46,7 +46,7 @@ namespace TestProject_C_seleniumframework.Utilities
             }
             initbrowser(browsername);
             driver.Value.Manage().Window.Maximize();
-            //driver.Value.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5); //wait after each line of execution
+            //driver.Value.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5); //wait after single line of execution
             driver.Value.Url = "https://rahulshettyacademy.com/loginpagePractise/";
         }
 

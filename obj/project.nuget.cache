@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Lm4wPzbK11feTuuhphlpyzT14Abyi1Ewt2TK1Q2XPQxrzdSGFv+wj2oaNjG7cMPCQDUI3+PH2JPXQsHONqhO8Q==",
+  "dgSpecHash": "vltNYHmymM4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\lijom\\source\\repos\\TestProject_C_seleniumframework\\TestProject_C#seleniumframework.csproj",
+  "projectFilePath": "C:\\Users\\lijom\\Source\\Repos\\TestProjectCsharp\\TestProject_C#seleniumframework.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lijom\\.nuget\\packages\\anglesharp\\1.1.0\\anglesharp.1.1.0.nupkg.sha512",
     "C:\\Users\\lijom\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
