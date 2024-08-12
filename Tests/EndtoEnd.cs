@@ -30,7 +30,7 @@ namespace TestProject_C_seleniumframework.Tests
         {
             //String[] expproduct = { "product" };
             String[] actual = new string[2]; 
-            //String[] actual = { "product" };
+            
 
             TestContext.Progress.WriteLine(driver.Value.Url);
             TestContext.Progress.WriteLine(driver.Value.Title);
